@@ -8,31 +8,26 @@ public class HarvestArea {
 	private double disponibility;
 	
 	
-	public HarvestArea(){
-		this.location = new Location();
-		this.size = AreaSize.SMALL;
-		this.disponibility = 1;	
+	public HarvestArea() throws Exception{
+		this.setLocation(new Location());
+		this.setSize(AreaSize.SMALL);
+		this.setDisponibility(1);	
 	}
 	
-	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility) throws Exception{
-		
-		if (disponibility < 0 || disponibility > 1){
-			Exception e = new Exception("The disponibility must be between 0 and 1");
-			throw e;
-		}
-		this.location = new Location(latitude, longitude);
-		this.size = size;
-		this.disponibility = disponibility;	
+	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility) throws Exception {
+		this.setDisponibility(disponibility);	
+		this.setLocation(new Location(latitude, longitude));
+		this.setSize(size);;
 	}
 	
-	public void updateDisponibility(double percentHarvest, AreaSize newSize){
+	public void updateDisponibility(double percentHarvest, AreaSize newSize) throws Exception{
 		double percentRest = 1 - percentHarvest;
 		if (this.size == newSize) {
-			this.disponibility *= percentRest;
+			this.setDisponibility(this.disponibility * percentRest);
 		}
 		else {
-			this.size = newSize;
-			this.disponibility = percentRest;
+			this.setSize(newSize); 
+			this.setDisponibility(percentRest);
 		}	
 	}
 	
@@ -57,7 +52,11 @@ public class HarvestArea {
 		return disponibility;
 	}
 
-	public void setDisponibility(double disponibility) {
+	public void setDisponibility(double disponibility) throws Exception {
+		if (disponibility < 0 || disponibility > 1){
+			Exception e = new Exception("The disponibility must be between 0 and 1");
+			throw e;
+		}
 		this.disponibility = disponibility;
 	}
 

@@ -1,6 +1,7 @@
 package Area;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class HarvestAreaTest {
@@ -16,7 +17,7 @@ public class HarvestAreaTest {
 	}
 	
 	@Test
-	public void testUpdateDipsponibilityIfSameSize() {
+	public void testUpdateDipsponibilityIfSameSize() throws Exception {
 		HarvestArea ha = new HarvestArea();
 		ha.setDisponibility(0.8);
 		ha.updateDisponibility(0.1, ha.getSize());
@@ -24,7 +25,7 @@ public class HarvestAreaTest {
 	}
 	
 	@Test
-	public void testUpdateDipsponibilityIfDifferentSize() {
+	public void testUpdateDipsponibilityIfDifferentSize() throws Exception {
 		HarvestArea ha = new HarvestArea();
 		ha.updateDisponibility(0.3, AreaSize.LARGE);
 		assertEquals(0.7, ha.getDisponibility(),1e-15);	
