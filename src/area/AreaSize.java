@@ -1,6 +1,7 @@
 package area;
 
 public enum AreaSize {
+	NULL("No Size Defined"),
 	SMALL("Small"),
 	MEDIUM("Medium"),
 	LARGE("Large");

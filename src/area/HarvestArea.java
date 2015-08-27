@@ -24,7 +24,7 @@ public class HarvestArea {
 	
 	public void updateDisponibility(double percentHarvest, AreaSize newSize) throws Exception{
 		double percentRest = 1 - percentHarvest;
-		if (this.size == newSize) {
+		if (newSize == AreaSize.NULL ||this.size == newSize) {
 			this.setDisponibility(this.disponibility.getPercent() * percentRest);
 		}
 		else {

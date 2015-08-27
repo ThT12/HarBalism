@@ -31,5 +31,13 @@ public class HarvestAreaTest {
 		assertEquals(0.7, ha.getDisponibility().getPercent(),1e-15);	
 		assertEquals(AreaSize.LARGE, ha.getSize());
 	}
+	
+	@Test
+	public void testUpdateDipsponibilityIfSizeNull() throws Exception {
+		HarvestArea ha = new HarvestArea();
+		ha.updateDisponibility(0.3, AreaSize.NULL);
+		assertEquals(0.7, ha.getDisponibility().getPercent(),1e-15);	
+		assertEquals(AreaSize.SMALL, ha.getSize());
+	}
 
 }
