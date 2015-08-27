@@ -1,11 +1,12 @@
 package Area;
 
+import maths.Percent;
 import Location.Location;
 
 public class HarvestArea {
 	private Location location;
 	private AreaSize size;
-	private double disponibility;
+	private Percent disponibility;
 	
 	
 	public HarvestArea() throws Exception{
@@ -23,7 +24,7 @@ public class HarvestArea {
 	public void updateDisponibility(double percentHarvest, AreaSize newSize) throws Exception{
 		double percentRest = 1 - percentHarvest;
 		if (this.size == newSize) {
-			this.setDisponibility(this.disponibility * percentRest);
+			this.setDisponibility(this.disponibility.getPercent() * percentRest);
 		}
 		else {
 			this.setSize(newSize); 
@@ -48,16 +49,12 @@ public class HarvestArea {
 		this.size = size;
 	}
 
-	public double getDisponibility() {
+	public Percent getDisponibility() {
 		return disponibility;
 	}
 
 	public void setDisponibility(double disponibility) throws Exception {
-		if (disponibility < 0 || disponibility > 1){
-			Exception e = new Exception("The disponibility must be between 0 and 1");
-			throw e;
-		}
-		this.disponibility = disponibility;
+		this.disponibility = new Percent(disponibility);
 	}
 
 }

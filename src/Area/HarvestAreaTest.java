@@ -21,14 +21,14 @@ public class HarvestAreaTest {
 		HarvestArea ha = new HarvestArea();
 		ha.setDisponibility(0.8);
 		ha.updateDisponibility(0.1, ha.getSize());
-		assertEquals(0.8*0.9, ha.getDisponibility(),1e-15);	
+		assertEquals(0.8*0.9, ha.getDisponibility().getPercent(),1e-15);	
 	}
 	
 	@Test
 	public void testUpdateDipsponibilityIfDifferentSize() throws Exception {
 		HarvestArea ha = new HarvestArea();
 		ha.updateDisponibility(0.3, AreaSize.LARGE);
-		assertEquals(0.7, ha.getDisponibility(),1e-15);	
+		assertEquals(0.7, ha.getDisponibility().getPercent(),1e-15);	
 		assertEquals(AreaSize.LARGE, ha.getSize());
 	}
 
