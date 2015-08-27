@@ -1,5 +1,6 @@
 package area;
 
+import plant.Plant;
 import maths.Percent;
 import location.Location;
 
@@ -8,8 +9,9 @@ public class HarvestArea {
 	private Location location;
 	private AreaSize size;
 	private Percent disponibility;
+	private Plant plant;
 	
-	
+
 	public HarvestArea() throws Exception{
 		this.setLocation(new Location());
 		this.setSize(AreaSize.SMALL);
@@ -56,6 +58,14 @@ public class HarvestArea {
 
 	public void setDisponibility(double disponibility) throws Exception {
 		this.disponibility = new Percent(disponibility);
+	}
+	
+	public Plant getPlant() {
+		return plant;
+	}
+
+	public void setPlant(Plant plant) {
+		this.plant = plant;
 	}
 
 }
