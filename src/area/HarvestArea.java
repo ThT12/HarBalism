@@ -1,7 +1,8 @@
-package Area;
+package area;
 
 import maths.Percent;
-import Location.Location;
+import location.Location;
+
 
 public class HarvestArea {
 	private Location location;
@@ -18,7 +19,7 @@ public class HarvestArea {
 	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility) throws Exception {
 		this.setDisponibility(disponibility);	
 		this.setLocation(new Location(latitude, longitude));
-		this.setSize(size);;
+		this.setSize(size);
 	}
 	
 	public void updateDisponibility(double percentHarvest, AreaSize newSize) throws Exception{

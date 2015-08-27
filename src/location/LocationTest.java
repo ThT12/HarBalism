@@ -1,4 +1,4 @@
-package Location;
+package location;
 
 import static org.junit.Assert.*;
 

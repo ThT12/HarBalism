@@ -1,4 +1,4 @@
-package Area;
+package area;
 
 import org.junit.Test;
 
