@@ -25,6 +25,17 @@ public class HarvestArea {
 		this.disponibility = disponibility;	
 	}
 	
+	public void updateDisponibility(double percentHarvest, AreaSize newSize){
+		double percentRest = 1 - percentHarvest;
+		if (this.size == newSize) {
+			this.disponibility *= percentRest;
+		}
+		else {
+			this.size = newSize;
+			this.disponibility = percentRest;
+		}	
+	}
+	
 	
 	public Location getLocation() {
 		return location;
