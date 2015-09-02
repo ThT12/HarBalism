@@ -1,8 +1,8 @@
-package harvest;
+package main.java.app.harvest;
 
-import area.AreaSize;
-import area.HarvestArea;
-import maths.Percent;
+import main.java.app.area.AreaSize;
+import main.java.app.area.HarvestArea;
+import main.java.app.maths.Percent;
 
 public class HarvestAction {
 	private HarvestArea ha;

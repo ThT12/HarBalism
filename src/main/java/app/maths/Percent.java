@@ -1,4 +1,4 @@
-package maths;
+package main.java.app.maths;
 
 public class Percent {
 	

@@ -1,11 +1,10 @@
-package harvest;
+package main.java.app.harvest;
 
 import static org.junit.Assert.*;
+import main.java.app.area.AreaSize;
+import main.java.app.area.HarvestArea;
 
 import org.junit.Test;
-
-import area.AreaSize;
-import area.HarvestArea;
 
 public class HarvestActionTest {
 

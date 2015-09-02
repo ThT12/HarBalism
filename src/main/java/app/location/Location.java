@@ -1,4 +1,4 @@
-package location;
+package main.java.app.location;
 
 public class Location {
 	private double latitude;

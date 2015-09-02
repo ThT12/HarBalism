@@ -1,4 +1,4 @@
-package plant;
+package main.java.app.plant;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;

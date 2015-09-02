@@ -1,4 +1,4 @@
-package location;
+package main.java.app.location;
 
 import static org.junit.Assert.*;
 

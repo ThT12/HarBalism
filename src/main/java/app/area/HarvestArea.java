@@ -1,8 +1,8 @@
-package area;
+package main.java.app.area;
 
-import plant.Plant;
-import maths.Percent;
-import location.Location;
+import main.java.app.location.Location;
+import main.java.app.maths.Percent;
+import main.java.app.plant.Plant;
 
 
 public class HarvestArea {

@@ -1,4 +1,4 @@
-package area;
+package main.java.app.area;
 
 import org.junit.Test;
 

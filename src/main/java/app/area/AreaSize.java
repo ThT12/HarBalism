@@ -1,4 +1,4 @@
-package area;
+package main.java.app.area;
 
 public enum AreaSize {
 	NULL("No Size Defined"),

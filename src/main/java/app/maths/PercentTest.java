@@ -1,4 +1,4 @@
-package maths;
+package main.java.app.maths;
 
 import org.junit.Test;
 

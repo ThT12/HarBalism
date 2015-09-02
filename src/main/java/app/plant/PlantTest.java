@@ -1,4 +1,4 @@
-package plant;
+package main.java.app.plant;
 
 import static org.junit.Assert.*;
 
