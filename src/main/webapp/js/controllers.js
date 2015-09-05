@@ -1,9 +1,14 @@
 var app = angular.module('ngdemoApp.controllers', []);
 
 
-app.controller('MyCtrl1', ['$scope','UserFactory', function ($scope, UserFactory) {
-	 $scope.bla = 'bla from controller';
-	 UserFactory.query({}, function (data) {
-	    $scope.message = data.name;
+app.controller('CtrlArea', ['$scope','AreaFactory', function ($scope, AreaFactory) {
+	AreaFactory.query({}, function (area) {
+	    $scope.areasize = area.size;
+	  })
+}]);
+
+app.controller('CtrlAreas', ['$scope','AreasFactory', function ($scope, AreasFactory) {
+	AreasFactory.query({}, function (areas) {
+	    $scope.areas = areas;
 	  })
 }]);

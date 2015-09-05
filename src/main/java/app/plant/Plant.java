@@ -12,7 +12,7 @@ public class Plant {
 	
 	public Plant(){
 		DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd");
-		this.name = "";
+		this.name = "Default Plant Name";
 		this.startHarvestDate = dtf.parseDateTime("01/01");
 		this.endHarvestDate = dtf.parseDateTime("12/31");
 	}

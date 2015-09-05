@@ -1,12 +1,11 @@
 package main.java.services.model;
 
-import main.java.app.plant.Plant;
+import main.java.app.area.HarvestArea;
 
 public class AreaService {
 
-	public Plant getDefaultArea() throws Exception {
-		Plant ha = new Plant();
-		ha.setName("MaPlante");
+	public HarvestArea getDefaultArea() throws Exception {
+		HarvestArea ha = new HarvestArea();
 		return ha;
 	}
 }

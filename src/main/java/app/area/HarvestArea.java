@@ -1,5 +1,6 @@
 package main.java.app.area;
 
+import main.java.app.hiking.Hiking;
 import main.java.app.location.Location;
 import main.java.app.maths.Percent;
 import main.java.app.plant.Plant;
@@ -10,18 +11,22 @@ public class HarvestArea {
 	private AreaSize size;
 	private Percent disponibility;
 	private Plant plant;
+	private Hiking hiking;
 	
 
 	public HarvestArea() throws Exception{
 		this.setLocation(new Location());
 		this.setSize(AreaSize.SMALL);
-		this.setDisponibility(1);	
+		this.setDisponibility(1);
+		this.setPlant(new Plant());
+		this.setHiking(new Hiking());
 	}
 	
-	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility) throws Exception {
+	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility, Hiking hiking) throws Exception {
 		this.setDisponibility(disponibility);	
 		this.setLocation(new Location(latitude, longitude));
 		this.setSize(size);
+		this.setHiking(hiking);
 	}
 	
 	public void updateDisponibility(double percentHarvest, AreaSize newSize) throws Exception{
@@ -66,6 +71,13 @@ public class HarvestArea {
 
 	public void setPlant(Plant plant) {
 		this.plant = plant;
+	}
+	
+	public Hiking getHiking() {
+		return hiking;
+	}
+	public void setHiking(Hiking hiking) {
+		this.hiking = hiking;
 	}
 
 }

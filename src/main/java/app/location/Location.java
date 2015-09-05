@@ -3,11 +3,7 @@ package main.java.app.location;
 public class Location {
 	private double latitude;
 	private double longitude;
-	
-	
-	public double getLatitude() {
-		return latitude;
-	}
+
 	
 	public Location() {
 		this.latitude = 0;
@@ -16,6 +12,10 @@ public class Location {
 	
 	public Location(double latitude, double longitude){
 		this.setLocation(latitude, longitude);
+	}
+	
+	public double getLatitude() {
+		return latitude;
 	}
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
