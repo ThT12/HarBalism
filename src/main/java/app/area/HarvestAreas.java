@@ -28,6 +28,17 @@ public class HarvestAreas {
 		this.areas.add(ha);		
 	}
 	
+	public HarvestAreas getAreaHarvestable() throws Exception{
+		HarvestAreas out = new HarvestAreas();
+		for (HarvestArea ha : this.getAreas()) {
+			if (ha.isHarvestable()) out.addHarvestArea(ha);
+		}
+		return out;
+	}
+	
+	public int getNumberOfHarvestArea(){
+		return this.getAreas().size();
+	}
 	
 	public List<HarvestArea> getAreas() {
 		return areas;
@@ -36,8 +47,15 @@ public class HarvestAreas {
 	public void setAreas(List<HarvestArea> areas) {
 		this.areas = areas;
 	}
-
-
-
+	
+	@Override
+	public boolean equals(Object other){
+		if (other == null) return false;
+	    if (other == this) return true;
+	    if (!(other instanceof HarvestAreas))return false;
+	    HarvestAreas otherHarvestAreas = (HarvestAreas)other;
+	    if (this.getAreas().equals(otherHarvestAreas.getAreas())) return true;
+	    return false;
+	}
 
 }

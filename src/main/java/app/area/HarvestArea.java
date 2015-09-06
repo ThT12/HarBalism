@@ -40,6 +40,12 @@ public class HarvestArea {
 		}	
 	}
 	
+	public boolean isHarvestable() {
+		if (this.getPlant().isHarvestable() && 
+				this.getDisponibility().getPercent() > this.getSize().getLimitHarvest()) return true;
+		return false;
+	}
+
 	
 	public Location getLocation() {
 		return location;
