@@ -4,6 +4,7 @@ var app = angular.module('ngdemoApp', ['ngRoute','ngdemoApp.services','ngdemoApp
 app.config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/areas', {templateUrl: 'view/areas.html', controller: 'CtrlAreas'})
+    .when('/hikings', {templateUrl: 'view/hikings.html', controller: 'CtrlHikings'})
     .when('/view1', {templateUrl: 'view/view1.html', controller: 'CtrlArea'})
 	.when('/', {controller: 'CtrlArea', templateUrl: 'view/view1.html'});
   $routeProvider.otherwise({redirectTo: '/view1'});

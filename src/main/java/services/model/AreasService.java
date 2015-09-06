@@ -5,7 +5,7 @@ import main.java.app.area.HarvestAreas;
 public class AreasService {
 	
 	public HarvestAreas getDefaultAreas() throws Exception {
-		HarvestAreas has = new HarvestAreas();
+		HarvestAreas has = new HarvestAreas("Exemple");
 		return has;
 	}
 

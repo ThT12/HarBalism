@@ -10,6 +10,10 @@ public class HarvestAreas {
 	private List<HarvestArea> areas;
 
 	public HarvestAreas() throws Exception{
+		this.areas = new ArrayList<HarvestArea>();
+	}
+	
+	public HarvestAreas(String s) throws Exception{
 		HarvestArea ha1 = new HarvestArea();
 		HarvestArea ha2 = new HarvestArea();
 		HarvestArea ha3 = new HarvestArea();
@@ -20,6 +24,10 @@ public class HarvestAreas {
 		this.areas.add(ha3);
 	}
 	
+	public void addHarvestArea(HarvestArea ha) {
+		this.areas.add(ha);		
+	}
+	
 	
 	public List<HarvestArea> getAreas() {
 		return areas;
@@ -28,5 +36,8 @@ public class HarvestAreas {
 	public void setAreas(List<HarvestArea> areas) {
 		this.areas = areas;
 	}
+
+
+
 
 }

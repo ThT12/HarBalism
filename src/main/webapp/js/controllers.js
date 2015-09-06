@@ -9,6 +9,19 @@ app.controller('CtrlArea', ['$scope','AreaFactory', function ($scope, AreaFactor
 
 app.controller('CtrlAreas', ['$scope','AreasFactory', function ($scope, AreasFactory) {
 	AreasFactory.query({}, function (areas) {
-	    $scope.areas = areas;
-	  })
+		$scope.areas = areas;
+	})
 }]);
+
+app.controller('CtrlHikings', ['$scope','HikingsFactory', function ($scope, HikingsFactory) {
+	HikingsFactory.query({}, function (hikings) {
+		$scope.hikings = hikings;
+	})
+
+	$scope.detail = false;
+	$scope.$watch('detail', function(){
+		$scope.detailText = $scope.detail ? 'Hide Details' : 'Show Details';
+	})
+}]);
+
+

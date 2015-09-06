@@ -1,0 +1,22 @@
+<h2>Default Hikings List</h2>
+
+<div ng-repeat="hiking in hikings.hikings">
+	<b>Hiking Name:</b> {{hiking.name}} <br> <b>Plants available
+		in this hiking:</b>
+	<ul>
+		<li
+			ng-repeat="area in hiking.harvestAreas.areas | unique:'plant' | orderBy:'plant.name'">
+			{{area.plant.name}} <small>(<a href=""
+				ng-click="detail=!detail">{{detailText}}</a>)
+		</small>
+			<p
+				ng-repeat="plantArea in hiking.harvestAreas.areas | filter:{plant:area.plant.name}"
+				ng-show="detail">
+				<b>Location:</b> Latitude {{plantArea.location.latitude}}, Longitude
+				{{plantArea.location.longitude}} <br> <b>Resource Size:</b>
+				{{plantArea.size}} <br> <b>Disponibility:</b>
+				{{plantArea.disponibility.percent}}
+			</p>
+		</li>
+	</ul>
+</div>

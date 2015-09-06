@@ -15,3 +15,9 @@ services.factory('AreasFactory', function ($resource) {
     	query: { method: 'GET', params: {} }
     })
 });
+
+services.factory('HikingsFactory', function ($resource) {
+    return $resource(baseUrl + '/rest/hikings', {}, {
+    	query: { method: 'GET', params: {} }
+    })
+});
