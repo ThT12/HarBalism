@@ -1,28 +1,81 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>My HTML File</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="Bourget Romain" />
+<meta name="keywords"
+	content="Bourget Romain, ThT12, ThT12's web, HarBalism" />
+<meta name="author" content="ThT12 / Bourget Romain" />
+<link rel="stylesheet" type="text/css" href="resources/style.css"
+	media="screen" />
+<link rel="icon" type="image/jpeg" href="resources/ThT12.jpg" />
+<title>HarBalism</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
-	<script src="js/services.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
 </head>
 <body ng-app="ngdemoApp">
+	<div id="wrapper2"></div>
+	<div id="wrapper">
+		<div id="container">
+			<div class="title">
+				<center>
+					<h1>HarBalism</h1>
+				</center>
+			</div>
+			<div class="header"></div>
+			<div class="navigation">
+				<h2 align="center">The simpliest way to Harvest for Herbalism</h2>
+				<div class="clearer"></div>
+			</div>
+			<div class="main" id="two-columns">
+				<div class="col2">
+					<div class="left">
+						<div class="content">
+							<ul class="block">
+								<li><a href="#">root</a></li>
+								<li><a href="#/view1">view1</a></li>
+								<li><a href="#/areas">Default Areas</a></li>
+								<li><a href="#/hikings">Default Hikings</a></li>
+							</ul>
 
-
-      <ul>
-      <li><a href="#">root</a></li>
-        <li><a href="#/view1">view1</a></li>
-        <li><a href="#/areas">Default Areas</a></li>
-        <li><a href="#/hikings">Default Hikings</a></li>
-      </ul>
-
-	<div ng-view></div>
-
+						</div>
+					</div>
+					<div class="right">
+						<div class="content">
+							<div ng-view></div>
+						</div>
+					</div>
+					<div class="clearer"></div>
+				</div>
+				<div class="footer">
+					<div class="left">
+						<font size="1">Copyright &copy; 2015 <a
+							href="http://tht12.free.fr/">ThT12.fr</a> - <a
+							href="http://tht12.free.fr/">Me Contacter</a>
+						</font>
+					</div>
+					<div class="right">
+						<font size="1">Site Partenaire : <a
+							href="http://www.lherbivore.com" target="_blank">Le Site de
+								L'HerBiVoRe</a> - Design by <a href="http://arcsin.se/">Arcsin</a> <a
+							href="http://templates.arcsin.se/">Web Templates</a> &amp;
+							modified by <a href="http://ThT12.free.fr/">ThT12</a>
+						</font>
+					</div>
+					<div class="clearer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
