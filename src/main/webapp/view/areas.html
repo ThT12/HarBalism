@@ -1,9 +1,14 @@
 <h2>Default Harvest Area List</h2>
 
-<p>Display Harvest Area of the following plant:
-	<select ng-model="Area_selection"
-		ng-options="area.plant.name as area.plant.name for area in areas.areas | orderBy: 'plant.name' | unique:'plant'">
+<p>
+	Display Harvest Area of the following plant: <select
+		ng-model="Area_selection">
 		<option value="" style="display: none;">-- Select a Plant --</option>
+		<option value="">All Plant</option>
+		<option
+			ng-repeat="area in areas.areas | orderBy: 'plant.name' | unique:'plant'"
+			value="{{area.plant.name}}">{{area.plant.name}}</option>
+
 	</select>
 </p>
 <p ng-repeat="area in areas.areas | filter:{plant:Area_selection} |orderBy:'plant.name'">
