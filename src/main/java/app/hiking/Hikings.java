@@ -10,8 +10,12 @@ import main.java.app.plant.Plant;
 public class Hikings {
 	
 	private List<Hiking> hikings;
-
+	
 	public Hikings() throws Exception {
+		this.hikings = new ArrayList<Hiking>();
+	}
+
+	public Hikings(String s) throws Exception {
 		Hiking h1 = new Hiking();
 		Hiking h2 = new Hiking();
 		Hiking h3 = new Hiking();
@@ -49,6 +53,7 @@ public class Hikings {
 	}
 	
 	public Hikings adviceHiking() throws Exception{
+		this.updateNumberOfHarvestableArea();
 		List<Hiking> hikingSort = this.getHikings();
 		Collections.sort(hikingSort);
 		
@@ -58,7 +63,7 @@ public class Hikings {
 		Hikings out = new Hikings();
 		
 		for (int i = 0; i<max; i++){
-			out.addHiking(hikingSort.get(i));
+			if(hikingSort.get(i).getNumberOfHarvestableArea() != 0) out.addHiking(hikingSort.get(i));
 		}
 
 		return out;

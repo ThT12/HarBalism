@@ -3,6 +3,8 @@ package main.java.app.area;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import main.java.app.plant.Plant;
 
 public class HarvestAreas {
@@ -28,6 +30,7 @@ public class HarvestAreas {
 		this.areas.add(ha);		
 	}
 	
+	@JsonIgnore
 	public HarvestAreas getAreaHarvestable() throws Exception{
 		HarvestAreas out = new HarvestAreas();
 		for (HarvestArea ha : this.getAreas()) {
