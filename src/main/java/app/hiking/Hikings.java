@@ -1,6 +1,7 @@
 package main.java.app.hiking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import main.java.app.area.HarvestArea;
@@ -39,6 +40,32 @@ public class Hikings {
 		this.hikings.add(h1);
 		this.hikings.add(h2);
 		this.hikings.add(h3);
+	}
+	
+	public void updateNumberOfHarvestableArea() throws Exception {
+		for (Hiking hiking : this.getHikings()){
+			hiking.updateNumberOfHarvestableArea();
+		}
+	}
+	
+	public Hikings adviceHiking() throws Exception{
+		List<Hiking> hikingSort = this.getHikings();
+		Collections.sort(hikingSort);
+		
+		int max = hikingSort.size();
+		if (max > 3) max = 3;
+
+		Hikings out = new Hikings();
+		
+		for (int i = 0; i<max; i++){
+			out.addHiking(hikingSort.get(i));
+		}
+
+		return out;
+	}
+	
+	public void addHiking(Hiking hiking){
+		this.getHikings().add(hiking);
 	}
 	
 	public List<Hiking> getHikings() {
