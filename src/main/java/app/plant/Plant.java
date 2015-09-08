@@ -1,5 +1,9 @@
 package main.java.app.plant;
 
+import java.sql.SQLException;
+
+import main.dbconnect.DbPlant;
+
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.format.DateTimeFormat;
@@ -9,7 +13,7 @@ public class Plant {
 	private String name;
 	private DateTime startHarvestDate;
 	private DateTime endHarvestDate;
-	
+		
 	public Plant(){
 		DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd");
 		this.name = "Default Plant Name";
@@ -23,7 +27,16 @@ public class Plant {
 		this.startHarvestDate = dtf.parseDateTime(startHarvestDate);
 		this.endHarvestDate = dtf.parseDateTime(endHarvestDate);
 	}
-
+	
+	public Plant(int id_plant) throws SQLException{
+		this(new DbPlant(id_plant));
+	}
+	
+	public Plant(DbPlant dbPlant) throws SQLException{
+		this(dbPlant.getName(), dbPlant.getStartHarvestDate(), dbPlant.getEndHarvestDate());
+	}
+	
+	
 	public boolean isHarvestable() {
 		DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd");
 		DateTime now = new DateTime();

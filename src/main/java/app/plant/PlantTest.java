@@ -2,6 +2,8 @@ package main.java.app.plant;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
+
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -27,6 +29,12 @@ public class PlantTest {
 		DateTime end = now.plusDays(60);
 		Plant plant = new Plant("test",start.toString(dtf),end.toString(dtf));
 		assertFalse(plant.isHarvestable());
+	}
+	
+	@Test
+	public void testPlantDatabaseConnector() throws SQLException {
+		Plant plant = new Plant(1);
+		assertEquals("Thym", plant.getName());
 	}
 
 }

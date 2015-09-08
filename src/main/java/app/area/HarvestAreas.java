@@ -19,7 +19,7 @@ public class HarvestAreas {
 		HarvestArea ha1 = new HarvestArea();
 		HarvestArea ha2 = new HarvestArea();
 		HarvestArea ha3 = new HarvestArea();
-		ha1.setPlant(new Plant("Second Plant","01/01","01/10"));
+		ha1.setPlant(new Plant(1));
 		this.areas = new ArrayList<HarvestArea>();
 		this.areas.add(ha1);
 		this.areas.add(ha2);
