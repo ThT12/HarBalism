@@ -69,6 +69,14 @@ public class Hikings {
 		return out;
 	}
 	
+	public List<HarvestArea> getHarvestAreas() {
+		List<HarvestArea> harvestAreas = new ArrayList<HarvestArea>();
+		for (Hiking hiking : this.getHikings()){
+			harvestAreas.addAll(hiking.getHarvestAreas().getAreas());
+		}
+		return harvestAreas;
+	}
+	
 	public void addHiking(Hiking hiking){
 		this.getHikings().add(hiking);
 	}
@@ -80,4 +88,5 @@ public class Hikings {
 	public void setHikings(List<Hiking> hikings) {
 		this.hikings = hikings;
 	}
+
 }

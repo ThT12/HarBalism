@@ -13,7 +13,7 @@
 </p>
 <p ng-repeat="area in areas.areas | filter:{plant:Area_selection} |orderBy:'plant.name'">
 		<b>Plant Name:</b> {{area.plant.name}} <br> <b>Hiking Name:</b>
-		{{area.hiking.name}} <br> <b>Location:</b> Latitude
+		{{area.hikingName}} <br> <b>Location:</b> Latitude
 		{{area.location.latitude}}, Longitude {{area.location.longitude}} <br>
 		<b>Resource Size:</b> {{area.size}} <br> <b>Disponibility:</b>
 		{{area.disponibility.percent}}

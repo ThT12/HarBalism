@@ -14,12 +14,12 @@ public class HarvestAreaTest {
 
 	@Test(expected=java.lang.Exception.class)
 	public void testExceptionHarvestAreaIfDisponibilitySupOne() throws Exception {
-		new HarvestArea(0.0,0.0,AreaSize.SMALL,1.1,new Hiking());
+		new HarvestArea("MySpot",0.0,0.0,AreaSize.SMALL,1.1,new Plant(),new Hiking());
 	}
 	
 	@Test(expected=java.lang.Exception.class)
 	public void testExceptionHarvestAreaIfDisponibilityInfZero() throws Exception {
-		new HarvestArea(0.0,0.0,AreaSize.SMALL,-0.1,new Hiking());
+		new HarvestArea("MySpot",0.0,0.0,AreaSize.SMALL,-0.1,new Plant(),new Hiking());
 	}
 	
 	@Test

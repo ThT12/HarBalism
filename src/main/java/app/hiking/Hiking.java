@@ -14,6 +14,11 @@ public class Hiking implements Comparable<Hiking> {
 		this.setHarvestAreas(new HarvestAreas());
 	}
 	
+	public Hiking(String name) throws Exception{
+		this.setName(name);
+		this.setHarvestAreas(new HarvestAreas());
+	}
+	
 	public void addHarvestArea(HarvestArea ha){
 		this.harvestAreas.addHarvestArea(ha);
 	}

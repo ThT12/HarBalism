@@ -19,7 +19,7 @@ public class HarvestAreas {
 		HarvestArea ha1 = new HarvestArea();
 		HarvestArea ha2 = new HarvestArea();
 		HarvestArea ha3 = new HarvestArea();
-		ha1.setPlant(new Plant(1));
+		ha1.setPlant(new Plant("Thym","01/01","12/31"));
 		this.areas = new ArrayList<HarvestArea>();
 		this.areas.add(ha1);
 		this.areas.add(ha2);
@@ -28,6 +28,10 @@ public class HarvestAreas {
 	
 	public void addHarvestArea(HarvestArea ha) {
 		this.areas.add(ha);		
+	}
+	
+	public void addHarvestAreas(List<HarvestArea> harvestArea) {
+		this.areas.addAll(harvestArea);
 	}
 	
 	@JsonIgnore
@@ -60,5 +64,6 @@ public class HarvestAreas {
 	    if (this.getAreas().equals(otherHarvestAreas.getAreas())) return true;
 	    return false;
 	}
+
 
 }

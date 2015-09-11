@@ -1,5 +1,7 @@
 package main.java.app.area;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import main.java.app.hiking.Hiking;
 import main.java.app.location.Location;
 import main.java.app.maths.Percent;
@@ -7,6 +9,7 @@ import main.java.app.plant.Plant;
 
 
 public class HarvestArea {
+	private String name;
 	private Location location;
 	private AreaSize size;
 	private Percent disponibility;
@@ -15,6 +18,7 @@ public class HarvestArea {
 	
 
 	public HarvestArea() throws Exception{
+		this.setName("Myspot");
 		this.setLocation(new Location());
 		this.setSize(AreaSize.SMALL);
 		this.setDisponibility(1);
@@ -22,10 +26,14 @@ public class HarvestArea {
 		this.setHiking(new Hiking());
 	}
 	
-	public HarvestArea(double latitude,double longitude, AreaSize size, double disponibility, Hiking hiking) throws Exception {
+
+
+	public HarvestArea(String name, double latitude,double longitude, AreaSize size, double disponibility, Plant plant, Hiking hiking) throws Exception {
+		this.setName(name);
 		this.setDisponibility(disponibility);	
 		this.setLocation(new Location(latitude, longitude));
 		this.setSize(size);
+		this.setPlant(plant);
 		this.setHiking(hiking);
 	}
 	
@@ -79,11 +87,23 @@ public class HarvestArea {
 		this.plant = plant;
 	}
 	
+	@JsonIgnore
 	public Hiking getHiking() {
 		return hiking;
 	}
 	public void setHiking(Hiking hiking) {
 		this.hiking = hiking;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getHikingName() {
+		return this.hiking.getName();
 	}
 
 }
