@@ -66,6 +66,10 @@ public class HarvestArea {
 	public AreaSize getSize() {
 		return size;
 	}
+	
+	public String getSizeString() {
+		return size.toString();
+	}
 
 	public void setSize(AreaSize size) {
 		this.size = size;
