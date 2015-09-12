@@ -6,9 +6,8 @@ app.config(function ($routeProvider, $httpProvider) {
     .when('/areas', {templateUrl: 'view/areas.html', controller: 'CtrlAreas'})
     .when('/hikings', {templateUrl: 'view/hikings.html', controller: 'CtrlHikings'})
     .when('/advices', {templateUrl: 'view/hikings.html', controller: 'CtrlAdvices'})
-    .when('/view1', {templateUrl: 'view/view1.html', controller: 'CtrlArea'})
-	.when('/', {controller: 'CtrlArea', templateUrl: 'view/view1.html'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+	.when('/', {templateUrl: 'view/home.html'});
+  $routeProvider.otherwise({redirectTo: '/'});
 
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
