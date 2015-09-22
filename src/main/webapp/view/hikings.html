@@ -6,12 +6,12 @@
 	<ul>
 		<li
 			ng-repeat="area in hiking.harvestAreas.areas | unique:'plant' | orderBy:'plant.name'">
-			{{area.plant.name}} <small>(<a href=""
-				ng-click="detail=!detail">{{detailText}}</a>)
-		</small>
+			{{area.plant.name}} (<a href=""
+				ng-click="switchDetail(area)" ng-init="area.detailText='Show Details'">{{area.detailText}}</a>)
+		
 			<p
 				ng-repeat="plantArea in hiking.harvestAreas.areas | filter:{plant:area.plant.name}"
-				ng-show="detail">
+				ng-init="area.isDetail=false" ng-show="area.isDetail">
 				<i ng-if="plantArea.harvestable"> This plant is currently harvestable
 				</i>
 				<i ng-if="!plantArea.harvestable"> This plant is currently NOT harvestable
