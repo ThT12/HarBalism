@@ -13,10 +13,10 @@ app.controller('CtrlHikings', ['$scope','HikingsFactory', function ($scope, Hiki
 	})
 
 	$scope.title = "List of all your Hikings";
-	$scope.detail = false;
-	$scope.$watch('detail', function(){
-		$scope.detailText = $scope.detail ? 'Hide Details' : 'Show Details';
-	})
+	$scope.switchDetail = function (area) {
+		area.isDetail =! area.isDetail;
+		area.detailText = area.isDetail ? 'Hide Details' : 'Show Details';
+	};
 }]);
 
 
@@ -26,10 +26,10 @@ app.controller('CtrlAdvices', ['$scope','AdvicesFactory', function ($scope, Advi
 	})
 	
 	$scope.title = "Here some hikings advices";
-	$scope.detail = false;
-	$scope.$watch('detail', function(){
-		$scope.detailText = $scope.detail ? 'Hide Details' : 'Show Details';
-	})
+	$scope.switchDetail = function (area) {
+		area.isDetail =! area.isDetail;
+		area.detailText = area.isDetail ? 'Hide Details' : 'Show Details';
+	};
 
 }]);
 
